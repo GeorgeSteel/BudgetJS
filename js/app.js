@@ -15,4 +15,38 @@ class UI {
     this.itemList = [];
     this.itemID = 0;
   }
+  // submit budget method
+  submitBudgetForm(){
+    console.log('es6');
+  }
 }
+
+function eventListeners() {
+  const budgetForm = document.querySelector('#budget-form');
+  const expenseForm = document.querySelector('#expense-form');
+  const expenseList = document.querySelector('#expense-list');
+
+  // new instance of UI Class
+  const ui = new UI();
+
+  // budget form submit
+  budgetForm.addEventListener('submit', event => {
+    event.preventDefault();
+    ui.submitBudgetForm();
+  });
+
+  // expense form submit
+  expenseForm.addEventListener('submit', event => {
+    event.preventDefault();
+  });
+
+  // expense click
+  expenseList.addEventListener('click', event => {
+    
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  eventListeners();
+});
+
