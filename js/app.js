@@ -17,7 +17,22 @@ class UI {
   }
   // submit budget method
   submitBudgetForm(){
-    console.log('es6');
+    const value = this.budgetInput.value;
+    if (value === '' || value < 0) {
+      this.budgetFeedback.classList.add('showItem');
+      this.budgetFeedback.innerHTML = `<p> value can't be empty or negative </p>`;
+      setTimeout( () => {
+        this.budgetFeedback.classList.remove('showItem');
+      }, 4000);
+    } else {
+      this.budgetAmount.textContent = value;
+      this.budgetInput.value = '';
+      this.showBalance();
+    }
+  }
+  // show balance
+  showBalance(){
+    console.log('something');
   }
 }
 
